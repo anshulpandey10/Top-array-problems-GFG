@@ -1,0 +1,13 @@
+int MissingNumber(vector<int> array, int n) {
+        // Your code goes here
+        int r=0; 
+        r= n * (n+1) /2;
+       // cout<<r;
+        for(int i=0;i<n-1;i++)
+        {
+            r=r-array[i];
+            
+        }
+        
+        return r;
+    }
