@@ -1,0 +1,37 @@
+int *findTwoElement(int *arr, int n) {
+        // code here
+        int repeat=0;
+        int missing=0;
+        //repeating
+        int a[n+1]={0};
+        for(int i=0;i<n;i++)
+        {
+            a[arr[i]]+=1;
+        }
+      //  cout<<a[2];
+        
+        //repeating
+        for(int i=1;i<n+1;i++)
+        {
+            if(a[i]==2)
+            {
+                repeat=i;
+                break;
+            }
+        }
+        
+        for(int i=1;i<n+1;i++)
+        {
+            if(a[i]==0)
+            {missing=i;
+            break;
+            }
+        }
+        
+        int *v=new int[2];
+        v[0]=repeat;
+        v[1]=missing;
+        
+        return v;
+         
+    }
