@@ -1,0 +1,16 @@
+pair<long long, long long> getMinMax(long long a[], int n) {
+    priority_queue<long long>max1(a,a+n);
+    int r=max1.top();
+    
+    priority_queue<long long, vector<long long>,greater<long long> >min1(a,a+n);
+    int y=min1.top();
+    
+    pair<ll, ll> b;
+    b.first=y;
+    b.second=r;
+    
+    
+    return b;
+    
+    
+}
