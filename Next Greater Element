@@ -1,0 +1,23 @@
+vector<long long> nextLargerElement(vector<long long> a, int n){
+        // Your code here
+        vector<long long>answer;
+        stack<long long>s;
+        
+        for(int i=n-1;i>=0;i--)
+        {
+            while(!s.empty() && s.top()<=a[i])
+            s.pop();
+            
+            if(s.empty())
+            answer.push_back(-1);
+            
+            else
+            answer.push_back(s.top());
+            
+            s.push(a[i]);
+        }
+        
+        reverse(answer.begin(),answer.end());
+        
+        return answer;
+    }
